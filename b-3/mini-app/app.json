@@ -1,0 +1,11 @@
+{
+  "pages": [
+    "pages/home/index"
+  ],
+  "window": {
+    "defaultTitle": "Taro Demo",
+    "titleBarColor": "#323239",
+    "navigationBarBackgroundColor": "#323239",
+    "navigationBarTextStyle": "white"
+  }
+}

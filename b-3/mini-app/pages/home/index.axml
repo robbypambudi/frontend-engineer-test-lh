@@ -1,0 +1,49 @@
+<import-sjs name="todo" from="./index.sjs"/>
+
+<view class="container">
+  <view class="header">
+    <view class="title">
+      <text>Todo List</text>
+    </view>
+    <!-- horizontal line -->
+    <view class="line"></view>
+  </view>
+
+
+  <view class="list">
+    <view class="task-list">
+      <block a:if="{{tasks.length === 0}}">
+        <view class="empty-state">
+          <text class="empty-text
+          ">Tidak ada tugas</text>
+        </view>
+      </block>
+      <block a:else>
+        <block a:for="{{todo.getTasksSortedByDate(tasks)}}" a:key="id">
+          <view class="card {{item.completed ? 'completed' : ''}}">
+            <view class="card-header">
+              <text class="task-title">{{item.title}}</text>
+              <text class="task-date">{{item.date}}</text>
+            </view>
+            <view class="card-content">
+              <text class="task-desc">{{item.description}}</text>
+            </view>
+            <view class="card-actions">
+              <button class="complete-button" onTap="toggleComplete" id="{{item.id}}">Selesai</button>
+              <button class="delete-button" onTap="deleteTask" id="{{item.id}}">Hapus</button>
+            </view>
+          </view>
+        </block>
+      </block>
+    </view>
+  </view>
+
+   <view class="add-task">
+    <view class="task-input-container">
+      <text class="task-label">Tambah tugas baru</text>
+      <input class="task-input {{newTaskText === '' ? 'empty' : ''}}" type="text" placeholder="Tambah judul tugas" onInput="onInputTitle" value="{{newTaskText}}" />
+      <textarea class="task-input {{newTaskDesc === '' ? 'empty' : ''}}" type="text" placeholder="Tambah deskripsi tugas" onInput="onInputDesc" value="{{newTaskDesc}}" />
+    </view>
+    <button class="add-button" onTap="addTask">Tambah</button>
+  </view>
+</view>
