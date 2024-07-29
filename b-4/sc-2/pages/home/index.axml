@@ -1,0 +1,25 @@
+<view class="profile-container">
+  <view class="profile-header">
+    <image class="profile-pic" src="{{user.profilePic}}" mode="aspectFill"></image>
+    <text class="profile-name">{{user.name}}</text>
+  </view>
+  <view class="profile-bio">
+    <text>{{user.bio}}</text>
+  </view>
+
+  <!-- Card for company, blog, and location -->
+  <view class="card">
+    <view class="card-content">
+      <text class="card-title">Public Repos</text>
+      <text>: {{user.publicRepos}}</text>
+    </view>
+    <view class="card-content">
+      <text class="card-title">Followers</text>
+      <text>: {{user.followers}}</text>
+    </view>
+    <view class="card-content">
+      <text class="card-title">Following</text>
+      <text>: {{user.following}}</text>
+    </view>
+  </view>
+</view>

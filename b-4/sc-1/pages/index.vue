@@ -1,11 +1,15 @@
 <template>
-  <Tutorial />
+  <div class="container mx-auto p-4">
+    <ProductCard />
+  </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import ProductCard from '~/components/card/ProductCard.vue'
 
-export default Vue.extend({
-  name: 'IndexPage',
-})
+export default {
+  components: {
+    ProductCard,
+  }
+}
 </script>
